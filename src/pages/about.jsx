@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./about.css";
 import "./home.css";
 
@@ -55,6 +56,7 @@ function useScrollReveal() {
 
 function About(){
   useScrollReveal();
+  const navigate = useNavigate();
 
     return(
       <>
@@ -133,10 +135,10 @@ function About(){
               that spans the globe — all from your kitchen.
             </p>
             <div className="ctaRow reveal fadeUp">
-              <button className="second-navCTA" onClick={() => window.location.href = "/recipes"}>
+              <button className="second-navCTA" onClick={() => navigate("/recipes")}>
                 Explore Recipes →
               </button>
-              <button className="first-navCTA" onClick={() => window.location.href = "/home"}>
+              <button className="first-navCTA" onClick={() => navigate("/home")}>
                 Learn More
               </button>
             </div>
